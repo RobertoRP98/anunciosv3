@@ -1,0 +1,93 @@
+<script setup lang="ts">
+import InputError from '@/components/InputError.vue';
+import TextLink from '@/components/TextLink.vue';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Spinner } from '@/components/ui/spinner';
+import AuthBase from '@/layouts/AuthLayout.vue';
+import { login } from '@/routes';
+import { store } from '@/routes/register';
+import { Form, Head } from '@inertiajs/vue3';
+import { Checkbox } from '@/components/ui/checkbox';
+</script>
+
+<template>
+    <AuthBase title="Crear una cuenta" description="Ingresa tus datos en el formulario">
+
+        <Head title="Register" />
+
+        <Form v-bind="store.form()" :reset-on-success="['password', 'password_confirmation']"
+            v-slot="{ errors, processing }" class="flex flex-col gap-6">
+            <div class="grid gap-6">
+                <div class="grid gap-2">
+                    <Label for="name">Nombre</Label>
+                    <Input id="name" type="text" required autofocus :tabindex="1" autocomplete="name" name="name"
+                        placeholder="Nombre Completo" />
+                    <InputError :message="errors.name" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="email">Correo Electronico</Label>
+                    <Input id="email" type="email" required :tabindex="2" autocomplete="email" name="email"
+                        placeholder="tucorreo@example.com" />
+                    <InputError :message="errors.email" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="phone">Telefono para contacto y Whatsapp</Label>
+                    <Input id="phone" type="phone" required :tabindex="2" name="phone" placeholder="1234567891" />
+                    <InputError :message="errors.phone" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="password">Contraseña</Label>
+                    <Input id="password" type="password" required :tabindex="3" autocomplete="new-password"
+                        name="password" placeholder="Contraseña" />
+                    <InputError :message="errors.password" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="password_confirmation">Confirmar Contraseña</Label>
+                    <Input id="password_confirmation" type="password" required :tabindex="4" autocomplete="new-password"
+                        name="password_confirmation" placeholder="Contraseña" />
+                    <InputError :message="errors.password_confirmation" />
+                </div>
+
+                <div class="grid gap-2">
+
+                    <div class="grid gap-2">
+                        <div class="flex items-start gap-3">
+                            <input id="terms_accepted" name="terms_accepted" value="1" type="checkbox" class="mt-1 h-4 w-4 rounded border-gray-300" />
+
+                            <label for="terms_accepted" class="text-sm leading-snug">
+                                He leído y acepto los
+                                <a href="/condiciones-de-uso" target="_blank" class="underline hover:text-primary">
+                                    Términos y Condiciones de uso
+                                </a>
+                                y la
+                                <a href="/politica-de-privacidad" target="_blank" class="underline hover:text-primary">
+                                    Política de Privacidad
+                                </a>.
+                            </label>
+                        </div>
+
+                        <InputError :message="errors.terms_accepted" />
+                    </div>
+
+                </div>
+
+                <Button type="submit" class="mt-2 w-full" tabindex="5" :disabled="processing"
+                    data-test="register-user-button">
+                    <Spinner v-if="processing" />
+                    Crear Cuenta
+                </Button>
+            </div>
+
+            <div class="text-center text-sm text-muted-foreground">
+                ¿Ya tienes una cuenta?
+                <TextLink :href="login()" class="underline underline-offset-4" :tabindex="6">Iniciar Sesión</TextLink>
+            </div>
+        </Form>
+    </AuthBase>
+</template>
