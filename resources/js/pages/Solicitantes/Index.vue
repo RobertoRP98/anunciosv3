@@ -3,7 +3,7 @@ import AppLayout from '@/layouts/app/AppHeaderLayout.vue';
 import { Head, router } from '@inertiajs/vue3';
 import { onMounted, ref, watch } from 'vue';
 import { route } from 'ziggy-js';
-import {Link} from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3'
 import { Button } from '@/components/ui/button';
 //IMPORTS PARA LAS TARJERTAS DE ANUNCIOS
 import {
@@ -29,6 +29,53 @@ const props = defineProps({
     searchquery: String,
     anuncios: Object,
 });
+
+const cardClass = (priority) => {
+    switch (priority) {
+        // 🔥 URGENTE / DESTACADO
+        case 1:
+            return `
+relative
+border-2 border-yellow-400/70
+bg-yellow-100/90
+
+
+dark:border-yellow-400/40
+dark:bg-yellow-100/90
+dark:shadow-[0_0_12px_rgba(234,179,8,0.25)]
+
+
+hover:bg-red-400/90
+dark:hover:bg-red-400/90
+
+
+transition
+`
+
+
+
+        // 🔵 PRIORITARIO
+        case 2:
+            return `
+border border-blue-400/60
+hover:bg-blue-50
+bg-blue-50/60
+dark:shadow-[0_0_10px_rgba(59,130,246,0.2)]
+
+dark:bg-blue-300/100
+dark:hover:bg-blue-200/100
+transition
+`
+
+
+        // ⚪ GRATIS
+        default:
+            return `
+bg-white
+dark:bg-white-900/10
+`
+    }
+}
 
 // sentinel para placeholder de municipio (no debe coincidir con ningún slug real)
 const MUNICIPIO_NULL = '__all__';
@@ -138,12 +185,11 @@ onMounted(async () => {
 </script>
 
 <template>
+
     <Head title="Solicitantes" />
 
     <AppLayout>
-        <div
-            class="s: grid grid-cols-1 grid-cols-2 items-end gap-4 md:grid-cols-2 lg:grid-cols-5 mt-1"
-        >
+        <div class="s: grid grid-cols-1 grid-cols-2 items-end gap-4 md:grid-cols-2 lg:grid-cols-5 mt-1">
             <!-- SELECT ESTADO -->
             <div>
                 <Select v-model="selectedState">
@@ -152,11 +198,7 @@ onMounted(async () => {
                     </SelectTrigger>
 
                     <SelectContent>
-                        <SelectItem
-                            v-for="estado in stateSearch"
-                            :key="estado.slug"
-                            :value="estado.slug"
-                        >
+                        <SelectItem v-for="estado in stateSearch" :key="estado.slug" :value="estado.slug">
                             {{ estado.name }}
                         </SelectItem>
                     </SelectContent>
@@ -175,11 +217,7 @@ onMounted(async () => {
                             Todos los municipios
                         </SelectItem>
 
-                        <SelectItem
-                            v-for="m in municipios"
-                            :key="m.slug"
-                            :value="m.slug"
-                        >
+                        <SelectItem v-for="m in municipios" :key="m.slug" :value="m.slug">
                             {{ m.name }}
                         </SelectItem>
                     </SelectContent>
@@ -196,11 +234,7 @@ onMounted(async () => {
                     <SelectContent>
                         <SelectItem value="_">Todas las categorías</SelectItem>
 
-                        <SelectItem
-                            v-for="c in categoriesSearch"
-                            :key="c.slug"
-                            :value="c.slug"
-                        >
+                        <SelectItem v-for="c in categoriesSearch" :key="c.slug" :value="c.slug">
                             {{ c.name }}
                         </SelectItem>
                     </SelectContent>
@@ -209,89 +243,92 @@ onMounted(async () => {
 
             <!-- INPUT BUSCADOR -->
             <div>
-                <Input
-                    id="searchquery"
-                    v-model="searchquery"
-                    type="text"
-                    placeholder="Buscar. 'se necesita sangre'"
-                    class="w-full"
-                />
+                <Input id="searchquery" v-model="searchquery" type="text" placeholder="Buscar. 'se necesita sangre'"
+                    class="w-full" />
             </div>
 
             <!-- BOTÓN -->
             <div class="col-span-full md:col-span-2 lg:col-span-1">
-                <Button @click="buscar" class="text-bg-white w-full text-black bg-white hover:bg-red-500 hover:shadow-md border border-black">
+                <Button @click="buscar"
+                    class="text-bg-white w-full text-black bg-white hover:bg-red-500 hover:shadow-md border border-black">
                     Buscar
                 </Button>
             </div>
         </div>
 
-    <div class="my-1 flex flex-col gap-4">
-    <Link
-        v-for="anuncio in props.anuncios.data"
-        :key="anuncio.slug"
-        :href="route('solicitante.public', anuncio.slug)"
-        class="block"
-    >
-        <Card
-            class="bg-red-100 border border-black transition hover:bg-white hover:shadow-md"
-        >
-            <CardContent class="p-4">
-                <!-- MUNICIPIO (arriba derecha) -->
-                <div class="mb-2 flex justify-end">
-                    <span
-                        class="rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-700"
-                    >
-                        {{ anuncio.municipio?.name }}
-                    </span>
-                </div>
 
-                <div class="flex gap-4">
-                    <!-- CATEGORÍA (izquierda) -->
-                    <div
-                        class="min-w-[110px] self-start rounded-md bg-blue-100 px-3 py-2 text-center text-xs font-semibold uppercase text-blue-700"
-                    >
-                        {{ anuncio.category?.name }}
+        <!-- INICIAN CARDS -->
+
+        <div class="my-1 flex flex-col gap-4">
+            <Link v-for="anuncio in props.anuncios.data" :key="anuncio.slug"
+                :href="route('solicitante.public', anuncio.slug)" class="block">
+                <Card :class="cardClass(anuncio.plan?.priority)" class="relative rounded-xl transition hover:shadow-md">
+                    <!-- ⭐ BADGE DESTACADO -->
+                    <div v-if="anuncio.plan?.priority === 1" class="absolute left-3 top-3 z-10 rounded-full
+bg-yellow-400 px-3 py-1 text-xs font-bold
+text-white shadow">
+                        🚨​ SE SOLICITA MUY URGENTE
                     </div>
 
-                    <!-- TEXTO -->
-                    <div class="flex-1">
-                        <h3
-                            class="text-sm font-semibold text-slate-900"
-                        >
-                            {{ anuncio.title }}
-                        </h3>
 
-                        <p
-                            class="mt-1 line-clamp-2 text-sm text-slate-600"
-                        >
-                            {{ anuncio.description }}
-                        </p>
+                    <!-- ⭐ BADGE DESTACADO -->
+                    <div v-if="anuncio.plan?.priority === 2" class="absolute left-3 top-3 z-10 rounded-full
+bg-blue-400 px-3 py-1 text-xs font-bold
+text-white shadow">
+                        URGENTE
                     </div>
-                </div>
-            </CardContent>
-        </Card>
-    </Link>
-</div>
 
-<div v-if="props.anuncios.links.length > 3" class="mt-6 flex justify-center">
-    <nav class="flex gap-1">
-        <button
-            v-for="link in props.anuncios.links"
-            :key="link.label"
-            v-html="link.label"
-            :disabled="!link.url"
-            @click="link.url && router.get(link.url, {}, { preserveScroll: false })"
-            class="rounded px-3 py-1 text-sm"
-            :class="[
-                link.active
-                    ? 'bg-red-500 text-white'
-                    : 'bg-white border text-slate-700 hover:bg-slate-300',
-                !link.url && 'opacity-50 cursor-not-allowed',
-            ]"
-        />
-    </nav>
-</div>
+
+                    <CardContent class="p-4">
+                        <!-- MUNICIPIO -->
+                        <div class="mb-2 flex justify-end">
+                            <span class="rounded-full bg-slate-200 px-3 py-1
+text-xs font-medium text-slate-700">
+                                {{ anuncio.municipio?.name }}
+                            </span>
+                        </div>
+
+
+                        <div class="flex gap-4">
+                            <!-- CATEGORÍA -->
+                            <div class="min-w-[110px] self-start rounded-md
+bg-blue-100 px-3 py-2 text-center
+text-xs font-semibold uppercase
+text-blue-700">
+                                {{ anuncio.category?.name }}
+                            </div>
+
+
+                            <!-- TEXTO -->
+                            <div class="flex-1">
+                                <h3 class="text-sm font-semibold text-slate-900">
+                                    {{ anuncio.title }}
+                                </h3>
+
+
+                                <p class="mt-1 line-clamp-2 text-sm text-slate-600">
+                                    {{ anuncio.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+            </Link>
+        </div>
+
+
+        <div v-if="props.anuncios.links.length > 3" class="mt-6 flex justify-center">
+            <nav class="flex gap-1">
+                <button v-for="link in props.anuncios.links" :key="link.label" v-html="link.label" :disabled="!link.url"
+                    @click="link.url && router.get(link.url, {}, { preserveScroll: false })"
+                    class="rounded px-3 py-1 text-sm" :class="[
+                        link.active
+                            ? 'bg-red-500 text-white'
+                            : 'bg-white border text-slate-700 hover:bg-slate-300',
+                        !link.url && 'opacity-50 cursor-not-allowed',
+                    ]" />
+            </nav>
+        </div>
 
 
     </AppLayout>

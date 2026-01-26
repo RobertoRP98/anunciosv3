@@ -85,7 +85,7 @@ class PostPublicController extends Controller
 
         return Inertia::render('Solicitantes/Index', [
             // 'anuncios' => $query->paginate(2),
-            'anuncios' => $query->paginate(5)->withQueryString(),
+            'anuncios' => $query->paginate(10)->withQueryString(),
             'state' => $state,
             'municipio' => $municipio,
             'category' => $category,
