@@ -84,7 +84,7 @@ const selectedPlan = computed(() =>
 
 <template>
     <Dialog :open="open" @update:open="(val) => val || emit('close')">
-        <DialogContent class="max-h-[80vh] overflow-y-auto">
+        <DialogContent class="max-h-[80vh]  overflow-y-auto">
             <DialogHeader>
                 <DialogTitle>Crear Anuncio</DialogTitle>
                 <DialogDescription>

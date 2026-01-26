@@ -56,8 +56,14 @@ class PostPublicController extends Controller
 
         $estado = State::where('slug', $state)->firstOrFail();
 
-        $query = Post::query()->where('state_id', $estado->id)->with('category', 'municipio');
-
+        $query = Post::query()
+        ->select('posts.*')
+        ->join('plans', 'posts.plan_id', '=', 'plans.id')
+        ->where('posts.state_id', $estado->id)
+        ->with(['category','municipio', 'plan'])
+        ->orderBy('plans.priority','asc')
+        ->orderBy('posts.created_at','desc');
+        
         if (!is_null($municipio)) {
             $municipioModel = Municipio::where('slug', $municipio)
                 ->where('state_id', $estado->id)
@@ -79,7 +85,7 @@ class PostPublicController extends Controller
 
         return Inertia::render('Solicitantes/Index', [
             // 'anuncios' => $query->paginate(2),
-            'anuncios' => $query->paginate(10)->withQueryString(),
+            'anuncios' => $query->paginate(5)->withQueryString(),
             'state' => $state,
             'municipio' => $municipio,
             'category' => $category,
