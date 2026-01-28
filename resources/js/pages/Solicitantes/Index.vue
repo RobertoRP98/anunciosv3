@@ -37,14 +37,14 @@ const cardClass = (priority) => {
             return `
         relative border-l-4
 
-        bg-amber-100/50 
-        dark:bg-amber-200/80 
-
+        bg-amber-100/20 
         border-amber-400 
-        dark:border-amber-500/80
+
+        dark:bg-yellow-200/90 
+        dark:border-amber-400
         
-        hover:shadow-lg hover:bg-amber-200/50
-        dark:hover:bg-amber-300/80
+        hover:shadow-lg hover:bg-amber-200/60
+        dark:hover:bg-yellow-200/100
         
         transition-all duration-300
       `;
@@ -53,10 +53,15 @@ const cardClass = (priority) => {
         case 2:
             return `
         relative border-l-4
-        border-blue-500 bg-blue-100/50
-        dark:bg-blue-900/10 dark:border-blue-400/70
+        dark:border-blue-400/70
+        border-blue-500 
+        
+        bg-blue-100/50
+        dark:bg-blue-200/80
+        
         hover:shadow-lg hover:bg-blue-200/50
-        dark:hover:bg-blue-900/20
+        dark:hover:bg-blue-200/90
+        
         transition-all duration-300
       `;
 
@@ -64,7 +69,7 @@ const cardClass = (priority) => {
         default:
             return `
 bg-white
-dark:bg-white-900/10
+dark:bg-white-900/100
 `
     }
 }
@@ -257,7 +262,7 @@ onMounted(async () => {
                 <Card :class="cardClass(anuncio.plan?.priority)" class="overflow-hidden rounded-xl border">
                     <div v-if="anuncio.plan?.priority === 1"
                         class="absolute right-0 top-0 rounded-bl-lg bg-amber-400 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-amber-950 shadow-sm">
-                        🔥 Muy Urgente
+                        🚨​❗ Muy Urgente 🚨​❗
                     </div>
 
                     <div v-if="anuncio.plan?.priority === 2"
@@ -267,27 +272,26 @@ onMounted(async () => {
 
                     <CardContent class="p-5">
                         <div class="mb-3 flex items-center justify-between">
-                            <div class="flex items-center gap-1 text-slate-500 dark:text-slate-400">
-                                <span class="text-xs font-medium">{{ anuncio.municipio?.name }}</span>
+                            <div class="flex items-center gap-1 text-slate-500 dark:">
+                                <span class="text-xs font-medium dark:text-black dark:text-slate-900">{{ anuncio.municipio?.name }}</span>
                             </div>
-                            <span class="text-[10px] uppercase text-slate-400">{{ anuncio.created_at_diff }}</span>
                         </div>
 
                         <div class="flex gap-4">
                             <div
-                                class="hidden sm:flex flex-col items-center justify-center min-w-[80px] h-16 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                                class="hidden sm:flex flex-col items-center justify-center min-w-[80px] h-16 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-200">
                                 <span class="text-[10px] font-bold uppercase tracking-tighter">Categoría</span>
                                 <span
-                                    class="text-xs font-semibold text-blue-600 dark:text-blue-400 truncate w-full text-center px-1">
+                                    class="text-xs font-semibold text-blue-600 dark:text-blue-200 truncate w-full text-center px-1">
                                     {{ anuncio.category?.name }}
                                 </span>
                             </div>
 
                             <div class="flex-1">
-                                <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                                <h3 class="text-base font-bold text-slate-900 dark:text-slate-900 leading-tight">
                                     {{ anuncio.title }}
                                 </h3>
-                                <p class="mt-1 line-clamp-2 text-sm text-slate-600 dark:text-slate-400">
+                                <p class="mt-1 line-clamp-2 text-sm text-slate-600 dark:text-slate-800">
                                     {{ anuncio.description }}
                                 </p>
                             </div>
