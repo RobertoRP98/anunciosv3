@@ -52,168 +52,169 @@ const breadcrumbs = [
         ">
                 <h1>Condiciones De Uso</h1>
                 <h3> CONDICIONES DE USO ACTUALIZADAS EL 13/01/2026 </h3> <br>
-                1.- Titularidad del sitio web. <br> 
+                1.- Titularidad del sitio web. <br>
 
-                DonadorRapido.com.mx <br> 
+                DonadorRapido.com.mx <br>
 
-                Correo electrónico info@donadorrapido.com.mx <br>  <br> 
+                Correo electrónico info@donadorrapido.com.mx <br> <br>
 
 
-                2.- Aceptación de las condiciones de uso <br> 
+                2.- Aceptación de las condiciones de uso <br>
 
                 Este SITIO WEB es titularidad de la empresa reseñada en el punto uno de este documento, en adelante el
-                PROVEEDOR DE SERVICIOS. <br> 
+                PROVEEDOR DE SERVICIOS. <br>
 
                 El servicio que provee el PROVEEDOR DE SERVICIOS es el de hosting o alojamiento web en un servidor con
                 una conexión segura a internet y un software para poder publicar páginas web de carácter personal, las
-                cuales requieren llegar a una audiencia masiva. <br> 
+                cuales requieren llegar a una audiencia masiva. <br>
 
                 El PROVEEDOR DE SERVICIOS, no participa en la creación de ninguna de las paginas web de este sitio, son
-                páginas web creadas por USUARIOS, el PROVEEDOR DE SERVICIOS, sólo las aloja. <br> 
+                páginas web creadas por USUARIOS, el PROVEEDOR DE SERVICIOS, sólo las aloja. <br>
 
                 La utilización del portal atribuye la condición de USUARIO e implica la aceptación de todas las
-                disposiciones incluidas en este AVISO LEGAL. <br> 
+                disposiciones incluidas en este AVISO LEGAL. <br>
 
                 La inserción de PÁGINAS WEB en el portal implica la aceptación de todas las disposiciones del AVISO
-                LEGAL. <br> 
+                LEGAL. <br>
 
                 El PROVEEDOR DE SERVICIOS se reserva el derecho de modificar las condiciones de uso del SITIO WEB. Por
-                ello, es obligación del usuario leerlas periódicamente. <br> 
+                ello, es obligación del usuario leerlas periódicamente. <br>
 
                 El PROVEEDOR DE SERVICIOS no puede asumir ninguna responsabilidad derivada del uso incorrecto,
-                inapropiado o ilícito de la información aparecida en las páginas de Internet del SITIO WEB. <br> 
+                inapropiado o ilícito de la información aparecida en las páginas de Internet del SITIO WEB. <br>
 
                 Con los límites establecidos en la ley, el SITIO WEB no asume ninguna responsabilidad derivada de la
                 falta de veracidad, integridad, actualización y precisión de los datos o informaciones que se contienen
-                en sus páginas de Internet. <br> 
+                en sus páginas de Internet. <br>
 
                 Los textos, imágenes, sonidos, animaciones, software y el resto de contenidos incluidos en este SITIO
                 WEB son propiedad exclusiva de sus LICENCIANTES. Cualquier acto de transmisión, distribución, cesión,
                 reproducción, almacenamiento o comunicación pública total o parcial, debe contar con el consentimiento
-                expreso del PROVEEDOR DE SERVICIOS. <br> 
+                expreso del PROVEEDOR DE SERVICIOS. <br>
 
                 Asimismo, para acceder a algunos de los servicios que el PROVEEDOR DE SERVICIOS ofrece a través del
                 SITIO WEB se deberá proporcionar algunos datos de carácter personal con el fin de poderle prestar y
                 ofrecer nuestros servicios así como para informarle de las mejoras del SITIO WEB. Puede obtener más
-                información en la Política de privacidad. <br> 
+                información en la Política de privacidad. <br>
 
                 Asimismo, le informamos de la posibilidad de que ejerza los derechos de acceso, rectificación,
                 cancelación y oposición de sus datos de carácter personal, manera gratuita mediante email o por correo
                 ordinario al PROVEEDOR DE SERVICIOS propietario de este SITIO WEB y establece las siguientes condiciones
-                de uso. <br>  <br> 
+                de uso. <br> <br>
 
 
 
-                3.- Definición del servicio del SITIO WEB <br> 
+                3.- Definición del servicio del SITIO WEB <br>
 
                 El servicio del SITIO WEB consiste en la suministración de un hardware, un software y una conexión
                 segura a internet, para el HOSPEDAJE DE PÁGINAS WEB de carácter personal de forma GRATUITA, estas
-                páginas web son CREADAS POR LOS USUARIOS, de forma INFORMATIVA. <br> <br> 
+                páginas web son CREADAS POR LOS USUARIOS, de forma INFORMATIVA. <br> <br>
 
 
-                4.- Condiciones generales sobre USUARIOS <br> 
+                4.- Condiciones generales sobre USUARIOS <br>
                 El usuario manifiesta que es completamente independiente, que pone su perfil por cuenta propia, que se
                 ofrece libremente y por su propia elección. Que su perfil es personal y no publica otras personas en el
-                mismo. Entiende que cualquier perfil que no cumpla con esta condición será borrado. <br> 
+                mismo. Entiende que cualquier perfil que no cumpla con esta condición será borrado. <br>
 
 
                 Para publicar un PAGINA WEB el USUARIO tiene que completar el formulario PUBLICAR, una vez publicado la
-                página web podra modificar, ver el anuncio en su panel de usuario. <br> 
+                página web podra modificar, ver el anuncio en su panel de usuario. <br>
 
                 Una vez creada la página web, el usuario podrá administrar sus páginas desde su PANEL DE USUARIO, si
-                este pierde su acceso puede recuperarlo en la pestaña “RECUPERAR CONTRASEÑA”.<br> 
+                este pierde su acceso puede recuperarlo en la pestaña “RECUPERAR CONTRASEÑA”.<br>
 
                 El PROVEEDOR DE SERVICIOS, bajo la petición de modificación, borrado u otras sobre una PÁGINA WEB, solo
                 las aceptará cuando provengan del email de gestión de USUARIO QUE LA CREO, o las que por cualquier medio
-                demuestre que es de el. <br> 
+                demuestre que es de el. <br>
 
                 UNA PÁGINA WEB permanecerá publicada hasta que el usuario decida borrarlo, SI EL USUARIO no actualiza su
-                página web en 2 años, el PROVEEDOR se reserva el derecho a eliminarla. <br> 
+                página web en 2 años, el PROVEEDOR se reserva el derecho a eliminarla. <br>
 
                 El SITIO WEB se define como un portal de HOSTING DE PÁGINAS WEB PERSONALES de modo que UN USUARIO debe
                 facilitar un teléfono valido para ser contactado. El PROVEEDOR DE SERVICIOS se reserva el derecho de
-                borrar cualquier PÁGINA WEB con datos erróneos. <br> 
+                borrar cualquier PÁGINA WEB con datos erróneos. <br>
 
                 El USUARIO es responsable de todo lo que publica, de sus actos y de todo daño que pudiera ocasionar. El
                 PROVEEDOR DE SERVICIOS pondrá a disposición inmediata de la policía, juzgados o entidades
-                gubernamentales aquella cualquier información que le sea requerida. <br> 
+                gubernamentales aquella cualquier información que le sea requerida. <br>
 
                 El PROVEEDOR DE SERVICIOS no es responsable de lo que pueda publicar un USUARIO. Asimismo, el PROVEEDOR
                 DE SERVICIOS no es responsable de los contenidos que transmiten o alojan o a los que facilita el acceso,
-                si no participa en su elaboración o no tiene conocimiento de la ilegalidad de estos. <br> 
+                si no participa en su elaboración o no tiene conocimiento de la ilegalidad de estos. <br>
 
                 Podrán publicarse PÁGINAS WEB en nombre de personas menores de edad, siempre que el contenido sea
                 meramente informativo y el USUARIO declare contar con la autorización expresa del padre, madre o tutor
-                legal, siendo este el único responsable del contenido publicado. <br>  <br> 
+                legal, siendo este el único responsable del contenido publicado. <br> <br>
 
-                Conocimiento efectivo del contenido ilícito. <br> <br> 
+                Conocimiento efectivo del contenido ilícito. <br> <br>
                 A los efectos de las presentes Condiciones de Uso, se entenderá que el PROVEEDOR DE SERVICIOS tiene
                 conocimiento efectivo de la ilicitud de un contenido únicamente cuando exista una resolución
                 administrativa o judicial firme, o cuando se reciba una notificación suficientemente motivada y
                 documentada que permita apreciar de forma objetiva, clara y no interpretativa la ilicitud del contenido
-                publicado. <br> 
+                publicado. <br>
                 No se considerará conocimiento efectivo la mera comunicación, denuncia genérica o apreciación subjetiva
                 de un tercero basada en interpretaciones personales, ambigüedades del lenguaje o suposiciones sobre la
-                intención del USUARIO. <br> 
+                intención del USUARIO. <br>
                 En particular, la utilización de expresiones genéricas como “ayuda”, “apoyo”, “gratificación”,
                 “colaboración” o similares no implicará por sí misma la existencia de una actividad ilícita, comercial o
                 contraria a la ley, salvo que de forma expresa, directa e inequívoca se ofrezca o solicite una
                 contraprestación económica, material o de cualquier otra naturaleza prohibida por la legislación
-                aplicable. <br> 
+                aplicable. <br>
                 El PROVEEDOR DE SERVICIOS evaluará cada caso de manera individual, proporcional y objetiva, reservándose
                 el derecho de solicitar información adicional al denunciante o al USUARIO antes de proceder a la
-                retirada del contenido. <br> 
-                La retirada preventiva de contenidos no supondrá reconocimiento alguno de ilicitud. <br> 
+                retirada del contenido. <br>
+                La retirada preventiva de contenidos no supondrá reconocimiento alguno de ilicitud. <br>
 
                 En el supuesto de que el PROVEEDOR reciba denuncia por una supuesta infracción de copyright o tenga
                 constancia a través de denuncia de la publicación de un teléfono falso o no veraz en un USUARIO, el
-                PROVEEDOR podrá solicitar documentación que pruebe dicha denuncia. <br> <br> 
+                PROVEEDOR podrá solicitar documentación que pruebe dicha denuncia. <br> <br>
 
 
-                El USUARIO se compromete a utilizar el Portal, sus contenidos y servicios conforme con: <br> 
+                El USUARIO se compromete a utilizar el Portal, sus contenidos y servicios conforme con: <br>
 
-                La Ley o cualesquiera otras normas del ordenamiento jurídico aplicable. <br> 
+                La Ley o cualesquiera otras normas del ordenamiento jurídico aplicable. <br>
 
-                Las presentes Condiciones de Uso. <br> 
+                Las presentes Condiciones de Uso. <br>
 
-                Las Normas de Publicación. <br> 
+                Las Normas de Publicación. <br>
 
-                Las buenas costumbres. <br> 
+                Las buenas costumbres. <br>
 
-                El orden público.<br> <br> 
+                El orden público.<br> <br>
 
 
                 El USUARIO deberá CREAR SU PÁGINA WEB en la categoría adecuada y la localidad en la que se encuentre y
-                comprometerse a: <br> 
+                comprometerse a: <br>
 
                 No cometer a través del SITIO WEB ningún delito recogido en el Código Penal o en cualquier otra
                 normativa aplicable. En concreto, y sin carácter limitativo sino ejemplificativo, queda estrictamente
-                prohibido en el SITIO WEB:<br> 
+                prohibido en el SITIO WEB:<br>
 
-                La trata de seres humanos. <br> 
+                La trata de seres humanos. <br>
 
-                El tráfico de órganos.<br> 
+                El tráfico de órganos.<br>
 
-                El tráfico de drogas.<br> 
+                El tráfico de drogas.<br>
 
-                El abuso físico. <br> 
+                El abuso físico. <br>
 
-                La comisión de delitos contra la libertad e indemnidad sexuales. <br> 
+                La comisión de delitos contra la libertad e indemnidad sexuales. <br>
 
-                No incitar a actuar de forma ilegal. <br> 
+                No incitar a actuar de forma ilegal. <br>
 
                 No difundir difamaciones, calumnias, injurias y/o contenidos o propaganda de carácter racista, xenófobo,
-                de apología del terrorismo o que atenten contra los derechos humanos. <br> 
+                de apología del terrorismo o que atenten contra los derechos humanos. <br>
 
-                No manifestar falsedades o inducir a error. <br> 
+                No manifestar falsedades o inducir a error. <br>
 
                 No suplantar a otros usuarios utilizando sus claves de acceso a los distintos servicios y/o contenidos
-                del Portal. <br> 
+                del Portal. <br>
 
                 No abusar del sistema de “denunciar” . <br>
                 No difundir comunicaciones no solicitadas o autorizadas. <br>
 
-                No difundir mensajes que atenten contra la dignidad de terceros o que sean groseros o falten el respeto. <br>
+                No difundir mensajes que atenten contra la dignidad de terceros o que sean groseros o falten el respeto.
+                <br>
 
                 No usar robots, spiders, “scrapers” o cualquier otro medio automático para acceder al Portal para
                 copiar, retirar, renovar o publicar contenido sin previo consentimiento escrito por EL PROVEEDOR DE
@@ -222,7 +223,8 @@ const breadcrumbs = [
                 No almacenar o en cualquier forma recabar información o datos personales de terceros sin su
                 consentimiento, incluidas las direcciones de correo electrónico. <br>
 
-                No esquivar, evitar o “saltar” las medidas utilizadas para impedir o restringir el acceso al Portal. <br>
+                No esquivar, evitar o “saltar” las medidas utilizadas para impedir o restringir el acceso al Portal.
+                <br>
 
                 Es necesario completar todos los campos obligatorios del formulario PUBLICAR UNA PÁGINA WEB. <br>
 
@@ -261,7 +263,13 @@ const breadcrumbs = [
                 contrato, no se considerará falta de veracidad la utilización de apodos o pseudónimos para identificar a
                 los usuarios en el portal, siempre y cuando esto no suponga un obstáculo para conocer la identidad real
                 de los mismos o llevar a cabo los cobros correspondientes a los servicios contratados a PROVEEDOR DE
-                SERVICIOS. <br><br>
+                SERVICIOS. <br> <br>
+
+                De conformidad con la Ley General de Salud de México, queda estrictamente prohibido el ofrecimiento,
+                solicitud, comercio o cualquier tipo de transacción que involucre el intercambio de órganos, tejidos,
+                células o fluidos humanos a cambio de una compensación económica o material. El USUARIO manifiesta que
+                cualquier publicación relacionada con donaciones se realiza de forma altruista, gratuita y fuera de
+                cualquier ámbito comercial. <br> <br>
 
 
                 5.- Procedimiento en caso de realización de actividades de carácter indebido, de datos incorrectos o
@@ -327,7 +335,8 @@ const breadcrumbs = [
                 citada PAGINA WEB (incluyendo, sin limitación, su reproducción, distribución, comunicación pública,
                 transformación y puesta a disposición del público) de manera que el PROVEEDOR podrá utilizarlo en todos
                 los medios y modalidades de explotación. EL PROVEEDOR DE SERVICIOS se reserva el derecho de retirar
-                contenidos en caso de que vulneren la ley, estas Condiciones de Uso o los derechos de terceras personas. <br><br>
+                contenidos en caso de que vulneren la ley, estas Condiciones de Uso o los derechos de terceras personas.
+                <br><br>
 
                 8.- Exclusión de garantías y responsabilidad <br><br>
 
@@ -362,7 +371,8 @@ const breadcrumbs = [
 
                 EL PROVEEDOR DE SERVICIOS podrá realizar revisiones automatizadas o manuales de carácter limitado,
                 aleatorio o reactivo, sin que ello implique obligación general de supervisión ni control previo de todos
-                los contenidos publicados. ya que el PROVEEDOR DE SERVICIOS no participa en la generación del contenido. <br>
+                los contenidos publicados. ya que el PROVEEDOR DE SERVICIOS no participa en la generación del contenido.
+                <br>
 
                 EL PROVEEDOR DE SERVICIOS no será responsable, ni indirectamente ni subsidiariamente, de la pérdida
                 económica o reputación, ni de ninguna clase de daños especiales, indirectos o emergentes, resultantes de
@@ -371,12 +381,21 @@ const breadcrumbs = [
                 La exoneración de responsabilidad señalada en el párrafo anterior será de aplicación en el caso de que
                 EL PROVEEDOR DE SERVICIOS no tenga conocimiento efectivo de que la actividad o la información almacenada
                 es ilícita o de que lesiona bienes o derechos de un tercero susceptibles de indemnización, o si la
-                tuviesen actúe con diligencia para retirar los datos y contenidos o hacer imposible el acceso a ellos. <br>
- 
+                tuviesen actúe con diligencia para retirar los datos y contenidos o hacer imposible el acceso a ellos.
+                <br>
+
                 Sin perjuicio de lo dispuesto anteriormente, la posible responsabilidad de EL PROVEEDOR DE SERVICIOS
                 frente al usuario o frente a terceros se limita a la más alta de las siguientes cantidades: (a) el
                 precio total que el usuario ha pagado a EL PROVEEDOR DE SERVICIOS durante los doce meses previos al acto
-                que originó la responsabilidad, o bien (b) la cantidad de cien (100) dólares. <br><br> 
+                que originó la responsabilidad, o bien (b) la cantidad de cien (100) dólares. <br><br>
+
+                Inexistencia de control sobre comunicaciones privadas: El PROVEEDOR DE SERVICIOS no tiene acceso,
+                control ni responsabilidad alguna sobre las comunicaciones, acuerdos, conversaciones o transacciones que
+                se lleven a cabo entre los USUARIOS a través de medios externos al SITIO WEB (como WhatsApp, llamadas
+                telefónicas, correo electrónico, redes sociales o encuentros personales). El USUARIO reconoce que el
+                SITIO WEB es únicamente una plataforma de hospedaje de información y que cualquier relación jurídica o
+                de hecho que surja tras el contacto inicial es responsabilidad exclusiva de las partes involucradas,
+                liberando al PROVEEDOR de cualquier daño o perjuicio derivado de dichas interacciones.
 
 
                 9.-Actividades de contratación electrónica <br><br>
@@ -479,7 +498,8 @@ const breadcrumbs = [
                 Datos Personales en Posesión de los Particulares, su reglamento y demás disposiciones aplicables.
                 Los datos serán utilizados exclusivamente para la prestación del servicio, la gestión del SITIO WEB y el
                 cumplimiento de obligaciones legales.
-                El USUARIO podrá ejercer sus derechos ARCO conforme a lo establecido en la Política de Privacidad. <br> <br>
+                El USUARIO podrá ejercer sus derechos ARCO conforme a lo establecido en la Política de Privacidad. <br>
+                <br>
                 16.- Copyright y DMCA <br>
                 Al publicar un perfil nos cede los derechos de copyright o DMCA de sus textos. El proveedor de servicios
                 no es responsable si un tercero copia el contenido ya que es público o si sale publicado en un foro,
@@ -530,7 +550,7 @@ const breadcrumbs = [
                 al PROVEEDOR DE SERVICIOS. <br><br>
 
 
-                Última modificación del 13/01/2026.
+                Última modificación del 30/01/2026.
 
 
                 </p>
