@@ -87,6 +87,7 @@ class PaymentController extends Controller
                 $post->start = now(),
                 $post->end = now()->addDays($plan->duration),
                 $post->is_premium = true,
+                $post->active = true,
                 $post->status = 'active',
                 $post->plan_id = $plan->id,
                 ]);

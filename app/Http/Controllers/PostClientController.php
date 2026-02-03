@@ -21,6 +21,7 @@ class PostClientController extends Controller
         $plans = Plan::all();
         $posts = Post::with(['user', 'category', 'state', 'municipio', 'plan'])
             ->where('user_id', Auth::id())
+            ->orderby('created_at', 'desc')
             ->get();
         $phone = Auth::user()->phone;
 
