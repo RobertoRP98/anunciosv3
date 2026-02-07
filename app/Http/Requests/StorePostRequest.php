@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\ForbiddenWords;
 
 class StorePostRequest extends FormRequest
 {
@@ -26,8 +27,8 @@ class StorePostRequest extends FormRequest
             'state_id' => 'required',
             'municipio_id' => 'required',
             'plan_id' => 'required',
-            'title' => 'required|max:60',
-            'description' => 'required|min:40|max:500',
+            'title' => ['required','max:60', new ForbiddenWords],
+            'description' => ['required','min:40','max:500',new ForbiddenWords],
         ];
     }
 }
