@@ -4,8 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { login, register } from '@/routes';
 import { Head, Link } from '@inertiajs/vue3';
 import { logout } from '@/routes';
-import NavFooter from '@/layouts/app/NavFooter.vue';
-
 import { 
     Heart, 
     UserPlus, 
@@ -14,7 +12,7 @@ import {
     ArrowRight, 
     CheckCircle2, 
     MessageCircle,
-    Clock, Target, Eye,
+    Clock,Target, Eye
 } from 'lucide-vue-next';
 
 withDefaults(
@@ -72,9 +70,9 @@ withDefaults(
             <div class="absolute top-0 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-rose-50/50 blur-3xl dark:bg-rose-900/10"></div>
             
             <div class="mx-auto max-w-4xl">
-                <span variant="outline" class="mb-4 border-rose-200 bg-rose-50 text-rose-600 dark:bg-rose-950 dark:text-rose-400">
+                <Badge variant="outline" class="mb-4 border-rose-200 bg-rose-50 text-rose-600 dark:bg-rose-950 dark:text-rose-400">
                     ❤ Salvando vidas hoy
-                </span>
+                </Badge>
                 <h1 class="animate-fadeIn mb-6 text-5xl font-black tracking-tight text-slate-900 md:text-7xl dark:text-white leading-[1.1]">
                     Conectamos esperanza <br />
                     <span class="bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">con solidaridad.</span>
@@ -98,6 +96,28 @@ withDefaults(
             </div>
         </section>
 
+        <section class="border-y border-slate-100 bg-slate-50/50 py-12 dark:border-zinc-800 dark:bg-zinc-900/30">
+            <div class="mx-auto max-w-7xl px-6">
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-rose-500">+1k</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Donadores</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-rose-500">24/7</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Disponibilidad</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-rose-500">100%</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Gratuito</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-rose-500">32</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide">Estados</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="py-24 px-6 overflow-hidden relative">
     <div class="absolute right-0 top-1/2 -z-10 h-64 w-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-50/50 blur-3xl dark:bg-blue-900/10"></div>
@@ -209,7 +229,7 @@ withDefaults(
                         <CardHeader>
                             <CardTitle class="text-xl">Prioritario</CardTitle>
                             <CardDescription>Mayor alcance y tiempo</CardDescription>
-                            <div class="mt-4 text-4xl font-black">$199<span class="text-sm font-normal text-slate-400">/anuncio</span></div>
+                            <div class="mt-4 text-4xl font-black">$159<span class="text-sm font-normal text-slate-400">/anuncio</span></div>
                         </CardHeader>
                         <CardContent class="space-y-4">
                             <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
@@ -231,7 +251,7 @@ withDefaults(
                         <CardHeader>
                             <CardTitle class="text-xl text-white">Muy Prioritario</CardTitle>
                             <CardDescription class="text-zinc-400">Urgencia máxima inmediata</CardDescription>
-                            <div class="mt-4 text-4xl font-black text-white">$349<span class="text-sm font-normal text-zinc-500">/anuncio</span></div>
+                            <div class="mt-4 text-4xl font-black text-white">$179<span class="text-sm font-normal text-zinc-500">/anuncio</span></div>
                         </CardHeader>
                         <CardContent class="space-y-4 text-zinc-300">
                             <div class="flex items-center gap-2 text-sm">
@@ -252,9 +272,6 @@ withDefaults(
             </div>
         </section>
     </main>
-
-        <NavFooter></NavFooter>
-
 </template>
 
 <style>
