@@ -58,6 +58,10 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
+
+    $this->authorize('create', Post::class);
+
+    
         $data = $request->validated();
 
         $plan = Plan::findOrFail($data['plan_id']);

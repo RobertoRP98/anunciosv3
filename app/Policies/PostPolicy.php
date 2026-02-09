@@ -53,4 +53,13 @@ class PostPolicy
     {
         return false;
     }
+
+
+    public function create(User $user)
+{
+    return Post::where('user_id', $user->id)
+        ->where('active', true)
+        ->count() < 3;
+}
+
 }

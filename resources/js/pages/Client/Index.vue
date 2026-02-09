@@ -77,28 +77,30 @@ const breadcrumbs = [
             <Table>
                 <TableHeader>
                     <TableRow>
+                        <TableHead>#</TableHead>
                         <TableHead>Titulo</TableHead>
                         <TableHead>Inicio</TableHead>
                         <TableHead>Fin</TableHead>
                         <TableHead>Vistas</TableHead>
-                        <TableHead>Activo</TableHead>
+                       <!-- <TableHead>Activo</TableHead>-->
                         <TableHead>Premium</TableHead>
-                        <TableHead>Status</TableHead>
+                       <!--  <TableHead>Status</TableHead> -->
                         <TableHead class="w-120px">Opciones</TableHead>
                     </TableRow>
                 </TableHeader>
 
                 <TableBody>
                     <TableRow v-for="post in posts" :key="post.id">
+                        <TableCell>{{ post.id }}</TableCell>
                         <TableCell>{{ post.title }}</TableCell>
                         <TableCell>{{ post.start_label?? '-' }}</TableCell>
                         <TableCell>{{ post.end_label ?? '-' }}</TableCell>
                         <TableCell>{{ post.views }}</TableCell>
-                        <TableCell>{{ post.active ? 'Si' : 'No' }}</TableCell>
+                      <!--  <TableCell>{{ post.active ? 'Si' : 'No' }}</TableCell> -->
                         <TableCell>{{
                             post.is_premium ? 'Si' : 'No'
                         }}</TableCell>
-                        <TableCell>{{ post.status_label }}</TableCell>
+                      <!--  <TableCell>{{ post.status_label }}</TableCell> -->
                         <TableCell class="space-x-2">
                             <Link
                                 :href="`/anuncios/${post.slug}`"

@@ -60,6 +60,7 @@ class PostPublicController extends Controller
         ->select('posts.*')
         ->join('plans', 'posts.plan_id', '=', 'plans.id')
         ->where('posts.state_id', $estado->id)
+        ->where('posts.end', '>=', now())
         ->with(['category','municipio', 'plan'])
         ->orderBy('plans.priority','asc')
         ->orderBy('posts.created_at','desc');
