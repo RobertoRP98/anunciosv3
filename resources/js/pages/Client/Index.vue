@@ -10,8 +10,21 @@ import {
 } from '@/components/ui/table';
 import AppLayout from '@/layouts/app/AppHeaderLayout.vue';
 import Create from '@/pages/Posts/Create.vue';
-import { Head, Link } from '@inertiajs/vue3';
-import { ref } from 'vue';
+import { Head, Link, usePage } from '@inertiajs/vue3';
+import { ref, watch } from 'vue';
+
+
+const page = usePage()
+
+watch(
+    () => page.props.errors.limit,
+    (error) => {
+        if (error) {
+            openModal.value = true
+        }
+    },
+    { immediate: true }
+)
 
 defineProps({
     posts: {
@@ -52,26 +65,24 @@ const breadcrumbs = [
 </script>
 
 <template>
+
     <Head title=" Mis Anuncios" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
-        <div
-            class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
-        >
+        <div class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
             <div class="mt-3">
                 <Button variant="outline" @click="openModal = true">
                     Agregar Anuncio
                 </Button>
 
-                <Create
-                    :open="openModal"
-                    @close="openModal = false"
-                    :categories="categories"
-                    :states="states"
-                    :plans="plans"
-                    :municipios="municipios"
-                    :phone="phone"
-                ></Create>
+                <Create :open="openModal" @close="openModal = false" :categories="categories" :states="states"
+                    :plans="plans" :municipios="municipios" :phone="phone" :limit-error="$page.props.errors.limit">
+                </Create>
+            </div>
+
+            <div v-if="$page.props.errors.limit"
+                class="mb-4 rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700">
+                {{ $page.props.errors.limit }}
             </div>
 
             <Table>
@@ -82,9 +93,9 @@ const breadcrumbs = [
                         <TableHead>Inicio</TableHead>
                         <TableHead>Fin</TableHead>
                         <TableHead>Vistas</TableHead>
-                       <!-- <TableHead>Activo</TableHead>-->
+                        <!-- <TableHead>Activo</TableHead>-->
                         <TableHead>Premium</TableHead>
-                       <!--  <TableHead>Status</TableHead> -->
+                        <!--  <TableHead>Status</TableHead> -->
                         <TableHead class="w-120px">Opciones</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -93,34 +104,25 @@ const breadcrumbs = [
                     <TableRow v-for="post in posts" :key="post.id">
                         <TableCell>{{ post.id }}</TableCell>
                         <TableCell>{{ post.title }}</TableCell>
-                        <TableCell>{{ post.start_label?? '-' }}</TableCell>
+                        <TableCell>{{ post.start_label ?? '-' }}</TableCell>
                         <TableCell>{{ post.end_label ?? '-' }}</TableCell>
                         <TableCell>{{ post.views }}</TableCell>
-                      <!--  <TableCell>{{ post.active ? 'Si' : 'No' }}</TableCell> -->
+                        <!--  <TableCell>{{ post.active ? 'Si' : 'No' }}</TableCell> -->
                         <TableCell>{{
                             post.is_premium ? 'Si' : 'No'
-                        }}</TableCell>
-                      <!--  <TableCell>{{ post.status_label }}</TableCell> -->
+                            }}</TableCell>
+                        <!--  <TableCell>{{ post.status_label }}</TableCell> -->
                         <TableCell class="space-x-2">
-                            <Link
-                                :href="`/anuncios/${post.slug}`"
-                                :class="
-                                    buttonVariants({ variant: 'secondary' })
-                                "
-                                >Ver</Link
-                            >
+                            <Link :href="`/anuncios/${post.slug}`" :class="buttonVariants({ variant: 'secondary' })
+                                ">Ver</Link>
+
+                            <Link :href="`/anuncios/${post.slug}/edit`" :class="buttonVariants({ variant: 'default' })">
+                                Editar</Link>
 
                             <Link
-                                :href="`/anuncios/${post.slug}/edit`"
-                                :class="buttonVariants({ variant: 'default' })"
-                                >Editar</Link
-                            >
-
-                            <Link
-                                v-if="!post.is_premium || post.status==='pending' || post.status==='expired'"
+                                v-if="!post.is_premium || post.status === 'pending' || post.status === 'expired' || (post.end && new Date(post.end) < new Date())"
                                 :href="`/anuncios/${post.slug}/premium`"
-                                :class="buttonVariants({ variant: 'default' })"
-                            >
+                                :class="buttonVariants({ variant: 'default' })">
                                 ⭐ Hacer Premium
                             </Link>
                         </TableCell>

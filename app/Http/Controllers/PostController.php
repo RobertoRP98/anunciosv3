@@ -13,6 +13,8 @@ use Illuminate\Support\Str;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+
 
 class PostController extends Controller
 {
@@ -59,8 +61,15 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
 
-    $this->authorize('create', Post::class);
+    $authorization = Gate::inspect('create', Post::class);
 
+    if(! $authorization->allowed()) {
+        return redirect()
+        ->route('mis.anuncios')
+         ->withErrors([
+            'limit' => 'Límite de anuncios alcanzado. Puedes renovar uno existente y editarlo si deseas.'
+        ]);
+    }
     
         $data = $request->validated();
 

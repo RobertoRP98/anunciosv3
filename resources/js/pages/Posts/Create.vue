@@ -21,7 +21,7 @@ import SelectValue from '@/components/ui/select/SelectValue.vue';
 
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from '@inertiajs/vue3';
-import { ref,computed } from 'vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps({
     open: Boolean,
@@ -29,6 +29,7 @@ const props = defineProps({
     states: Array,
     plans: Array,
     phone: String,
+    limitError: String,
 });
 
 const phone = props.phone;
@@ -96,20 +97,13 @@ const selectedPlan = computed(() =>
             <div class="grid gap-4">
                 <div class="grid w-full gap-2">
                     <Label for="state_id">Selecciona un Estado</Label>
-                    <Select
-                        v-model="form.state_id"
-                        @update:modelValue="loadMunicipios"
-                    >
+                    <Select v-model="form.state_id" @update:modelValue="loadMunicipios">
                         <SelectTrigger>
                             <SelectValue placeholder="Selecciona un Estado">
                             </SelectValue>
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem
-                                v-for="state in states"
-                                :key="state.id"
-                                :value="state.id"
-                            >
+                            <SelectItem v-for="state in states" :key="state.id" :value="state.id">
                                 {{ state.name }}
                             </SelectItem>
                         </SelectContent>
@@ -120,22 +114,13 @@ const selectedPlan = computed(() =>
                 <div class="grid w-full gap-2">
                     <Label for="municipio_id">Ciudad</Label>
 
-                    <Select
-                        v-model="form.municipio_id"
-                        :disabled="municipiosList.length === 0"
-                    >
+                    <Select v-model="form.municipio_id" :disabled="municipiosList.length === 0">
                         <SelectTrigger>
-                            <SelectValue
-                                placeholder="Selecciona municipio"
-                            ></SelectValue>
+                            <SelectValue placeholder="Selecciona municipio"></SelectValue>
                         </SelectTrigger>
 
                         <SelectContent>
-                            <SelectItem
-                                v-for="municipio in municipiosList"
-                                :key="municipio.id"
-                                :value="municipio.id"
-                            >
+                            <SelectItem v-for="municipio in municipiosList" :key="municipio.id" :value="municipio.id">
                                 {{ municipio.name }}
                             </SelectItem>
                         </SelectContent>
@@ -147,17 +132,11 @@ const selectedPlan = computed(() =>
                     <Label for="category_id">Selecciona una Categoria</Label>
                     <Select v-model="form.category_id">
                         <SelectTrigger>
-                            <SelectValue
-                                placeholder="Presiona para ver las categorias"
-                            >
+                            <SelectValue placeholder="Presiona para ver las categorias">
                             </SelectValue>
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem
-                                v-for="category in categories"
-                                :key="category.id"
-                                :value="category.id"
-                            >
+                            <SelectItem v-for="category in categories" :key="category.id" :value="category.id">
                                 {{ category.name }}
                             </SelectItem>
                         </SelectContent>
@@ -167,20 +146,14 @@ const selectedPlan = computed(() =>
 
                 <div class="grid w-full gap-2">
                     <Label for="title">Titulo</Label>
-                    <Input
-                        v-model="form.title"
-                        class="input"
-                        placeholder="Solicito donador para el Hospital General"
-                    />
+                    <Input v-model="form.title" class="input" placeholder="Solicito donador para el Hospital General" />
                     <InputError :message="form.errors.title"></InputError>
                 </div>
 
                 <div class="grid w-full gap-2">
                     <Label for="description">Descripción</Label>
-                    <Textarea
-                        v-model="form.description"
-                        placeholder="Informacion de lo que necesitas y en donde, ejemplo: Solicito 10 donadores O+ para el Hospital General, Contactar al numero por llamada o whatsapp"
-                    ></Textarea>
+                    <Textarea v-model="form.description"
+                        placeholder="Informacion de lo que necesitas y en donde, ejemplo: Solicito 10 donadores O+ para el Hospital General, Contactar al numero por llamada o whatsapp"></Textarea>
                     <InputError :message="form.errors.description"></InputError>
                 </div>
 
@@ -197,11 +170,7 @@ const selectedPlan = computed(() =>
                             <SelectValue placeholder="Selecciona un plan" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem
-                                v-for="p in plans"
-                                :key="p.id"
-                                :value="p.id"
-                            >
+                            <SelectItem v-for="p in plans" :key="p.id" :value="p.id">
                                 {{ p.name }} – {{ p.description }}
                             </SelectItem>
                         </SelectContent>
@@ -211,50 +180,51 @@ const selectedPlan = computed(() =>
 
                 <!-- PREVIEW DEL PLAN ELEGIDO -->
 
-                <div
-    v-if="selectedPlan"
-    class="
+                <div v-if="selectedPlan" class="
         rounded-lg border 
         bg-gray-50 text-gray-900 
         p-4 shadow-sm
         dark:bg-gray-900 
         dark:border-gray-700 
         dark:text-gray-100
-    "
->
-    <h3 class="text-lg font-semibold">
-        {{ selectedPlan.name }}
-    </h3>
+    ">
+                    <h3 class="text-lg font-semibold">
+                        {{ selectedPlan.name }}
+                    </h3>
 
-    <p class="text-sm text-gray-600 dark:text-white">
-        {{ selectedPlan.description }}
-    </p>
+                    <p class="text-sm text-gray-600 dark:text-white">
+                        {{ selectedPlan.description }}
+                    </p>
 
-    <div class="mt-2 font-bold text-primary dark:text-white-600">
-        Precio:
-        {{
-            selectedPlan.price > 0
-                ? '$' + selectedPlan.price
-                : 'GRATIS'
-        }}
-    </div>
+                    <div class="mt-2 font-bold text-primary dark:text-white-600">
+                        Precio:
+                        {{
+                            selectedPlan.price > 0
+                                ? '$' + selectedPlan.price
+                                : 'GRATIS'
+                        }}
+                    </div>
 
-    <p class="mt-1 text-xs text-gray-500 dark:text-white">
-        Duración: {{ selectedPlan.duration }} días
-    </p>
-</div>
-               
+                    <p class="mt-1 text-xs text-gray-500 dark:text-white">
+                        Duración: {{ selectedPlan.duration }} días
+                    </p>
+                </div>
+
             </div>
 
-            
+            <div v-if="limitError" class="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+                {{ limitError }}
+            </div>
 
-              <DialogFooter>
+            <DialogFooter>
                 <Button variant="outline" @click="emit('close')">Cancelar</Button>
                 <Button @click="submitForm" :disabled="form.processing">
                     <span v-if="form.processing">Guardando…</span>
                     <span v-else>Guardar</span>
                 </Button>
             </DialogFooter>
+
+
         </DialogContent>
     </Dialog>
 </template>
