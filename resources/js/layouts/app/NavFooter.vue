@@ -2,7 +2,8 @@
 </script>
 
 <template>
-    <footer class="w-full bg-slate-50 text-slate-500 py-10 mt-10 border-t border-slate-100 dark:bg-zinc-950 dark:text-slate-400 dark:border-zinc-900">
+    <footer
+        class="w-full bg-slate-50 text-slate-500 py-10 mt-10 border-t border-slate-100 dark:bg-zinc-950 dark:text-slate-400 dark:border-zinc-900">
         <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
 
             <div class="space-y-4">
@@ -25,9 +26,9 @@
                     Navegación
                 </h3>
 
-               <ul class="space-y-3 text-sm">
+                <ul class="space-y-3 text-sm">
                     <li>
-                        <a href="/Solicitantes" class="hover:text-rose-600 transition-colors duration-200">
+                        <a href="/solicitantes" class="hover:text-rose-600 transition-colors duration-200">
                             Solicitantes
                         </a>
                     </li>
@@ -37,7 +38,7 @@
                         </a>
                     </li>
 
-                </ul> 
+                </ul>
             </div>
 
             <div>
@@ -72,7 +73,8 @@
         </div>
 
 
-        <div class="border-t border-slate-200 mt-10 pt-8 text-center text-sm text-slate-400 dark:border-zinc-800 dark:text-slate-500">
+        <div
+            class="border-t border-slate-200 mt-10 pt-8 text-center text-sm text-slate-400 dark:border-zinc-800 dark:text-slate-500">
             © {{ new Date().getFullYear() }} MiSitio — Todos los derechos reservados.
         </div>
     </footer>

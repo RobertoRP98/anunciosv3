@@ -55,7 +55,7 @@ class Post extends Model
         return 'slug';
     }
 
-    protected $casts = ['active' => 'boolean', 'is_premium' => 'boolean', 'start' => 'date', 'end' => 'date'];
+    protected $casts = ['active' => 'boolean', 'is_premium' => 'boolean', 'start' => 'datetime', 'end' => 'datetime'];
 
 
      protected $appends = ['status_label', 'start_label', 'end_label'];
@@ -72,11 +72,11 @@ class Post extends Model
 
     public function getStartLabelAttribute(): string
     {
-        return $this->start ? $this->start->format('d/m/Y') : '-';
+        return $this->start ? $this->start->format('d/m/Y, H:i') : '-';
     }
 
     public function getEndLabelAttribute(): string
     {
-        return $this->end ? $this->end->format('d/m/Y') : '-';
+        return $this->end ? $this->end->format('d/m/Y, H:i') : '-';
     }
 }

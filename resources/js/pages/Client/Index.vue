@@ -110,7 +110,7 @@ const breadcrumbs = [
                         <!--  <TableCell>{{ post.active ? 'Si' : 'No' }}</TableCell> -->
                         <TableCell>{{
                             post.is_premium ? 'Si' : 'No'
-                            }}</TableCell>
+                        }}</TableCell>
                         <!--  <TableCell>{{ post.status_label }}</TableCell> -->
                         <TableCell class="space-x-2">
                             <Link :href="`/anuncios/${post.slug}`" :class="buttonVariants({ variant: 'secondary' })
