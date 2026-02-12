@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PublicPostResource;
 use App\Models\Post;
+use App\Models\PostReport;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\State;
 use App\Models\Category;
@@ -109,4 +112,6 @@ class PostPublicController extends Controller
                 : route('solicitantes'),
         ]);
     }
+
+
 }

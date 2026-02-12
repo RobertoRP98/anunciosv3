@@ -15,6 +15,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostClientController;
 use App\Http\Controllers\PostPublicController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\PostReportController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -66,6 +67,7 @@ Route::get(
 
 Route::get('/solicitantes', [PostPublicController::class, 'solicitantes'])->name('solicitantes');
 route::get('/solicitante/{post}', [PostPublicController::class, 'showPublic'])->name('solicitante.public');
+route::post('/solicitante/{post}/reportar', [PostReportController::class, 'store'])->name('solicitante.reportar');
 route::get('/perfiles-personales', [AnnouncementController::class,'profiles'])->name('perfiles.personales');
 route::get('/condiciones-de-uso', [AnnouncementController::class,'conditions'])->name('condiciones.uso');
 route::get('/politica-de-privacidad', [AnnouncementController::class,'privacity'])->name('politica.privacidad');
