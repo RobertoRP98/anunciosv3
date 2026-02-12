@@ -58,7 +58,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 
                     <div class="grid gap-2">
                         <div class="flex items-start gap-3">
-                            <input id="terms_accepted" name="terms_accepted" value="1" type="checkbox" class="mt-1 h-4 w-4 rounded border-gray-300" />
+                            <input id="terms_accepted" name="terms_accepted" value="1" type="checkbox"
+                                class="mt-1 h-4 w-4 rounded border-gray-300" />
 
                             <label for="terms_accepted" class="text-sm leading-snug">
                                 He leído y acepto los
