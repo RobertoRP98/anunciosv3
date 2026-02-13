@@ -25,21 +25,24 @@ import { ref, computed } from 'vue';
 
 const props = defineProps({
     open: Boolean,
-    post: String,
+    postId: {
+        type: Number,
+        required: true
+    }
 });
 
 const emit = defineEmits(['close']);
 
 const form = useForm({
-    post_id: props.post,
+    post_id: props.postId,
     reason: '',
     description: '',
-    description: '',
-    terms_accepte: false,
+    contact: '',
+    terms_accepted: false,
 });
 
 const submitForm = () => {
-    form.post(`/solicitante/{post}/reportar`, {
+    form.post(`/solicitante/${props.postId}/reportar`, {
         preserveScroll: true,
         onSuccess: () => {
             form.reset();
@@ -64,14 +67,46 @@ const submitForm = () => {
             <!-- campos del formulario -->
             <div class="grid gap-4">
 
+                <!-- Motivo -->
+                <div class="grid gap-2">
+                    <Label>Motivo</Label>
+                    <Select v-model="form.reason">
+                        <SelectTrigger>
+                            <SelectValue placeholder="Selecciona un motivo" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="Incumple politicas">Incumple políticas</SelectItem>
+                            <SelectItem value="Trafico">Tráfico</SelectItem>
+                            <SelectItem value="Datos falsos">Datos falsos</SelectItem>
+                            <SelectItem value="Contenido ofensivo">Contenido ofensivo</SelectItem>
+                            <SelectItem value="Estafa o fraude">Estafa o fraude</SelectItem>
+                            <SelectItem value="Otro">Otro</SelectItem>
+                        </SelectContent>
+                    </Select>
+                    <InputError :message="form.errors.reason" />
+                </div>
 
+                <!-- Contacto -->
+                <div class="grid gap-2">
+                    <Label>Email (opcional)</Label>
+                    <Input v-model="form.contact" placeholder="correo@ejemplo.com" />
+                    <InputError :message="form.errors.contact" />
+                </div>
 
                 <div class="grid w-full gap-2">
                     <Label for="description">Motivo del reporte</Label>
-                    <Textarea v-model="form.description" placeholder="Este anuncio esta mal porque..."></Textarea>
+                    <Textarea v-model="form.description" placeholder="Describe el problema (opcional)"></Textarea>
                     <InputError :message="form.errors.description"></InputError>
                 </div>
 
+                <!-- Términos -->
+                <div v-if="form.contact" class="flex items-start gap-2">
+                    <input type="checkbox" v-model="form.terms_accepted" />
+                    <span class="text-xs text-slate-600">
+                        Acepto que me contacten sobre este reporte
+                    </span>
+                    <InputError :message="form.errors.terms_accepted" />
+                </div>
 
             </div>
             <DialogFooter>

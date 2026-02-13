@@ -292,6 +292,7 @@ withDefaults(
                             </div>
                         </CardContent>
                         <CardFooter>
+
                             <Button class="w-full bg-rose-500 hover:bg-rose-600">Elegir Prioritario</Button>
 
                         </CardFooter>

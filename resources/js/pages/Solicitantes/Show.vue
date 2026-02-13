@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import AppLayout from '@/layouts/app/AppHeaderLayout.vue';
+import Report from '../Reports/Report.vue';
 import { Head, Link } from '@inertiajs/vue3';
 import {
     Phone, MessageCircle, Copy, Check, ChevronLeft,
@@ -17,6 +18,8 @@ const props = defineProps({
 });
 
 const copied = ref(false);
+
+const openReport = ref(false);
 
 const breadcrumbs = computed(() => [
     { title: 'Anuncios', href: props.backUrl },
@@ -111,6 +114,13 @@ const whatsappUrl = computed(() => {
                                 <span class="font-bold">Seguridad:</span> No realices depósitos o pagos por adelantado.
                             </p>
                         </div>
+
+                        <Button variant="outline" class="mt-4 w-full text-red-600 border-red-200 hover:bg-red-50"
+                            @click="openReport = true">
+                            Reportar anuncio
+                        </Button>
+
+
                     </div>
 
                     <div class="lg:col-span-4">
@@ -204,6 +214,11 @@ const whatsappUrl = computed(() => {
             </div>
         </div>
     </AppLayout>
+
+
+    <Report :open="openReport" :post-id="Number(post.data.id)" @close="openReport = false" />
+
+
 </template>
 <style scoped>
 /* Efecto de suavizado para el modo oscuro */
