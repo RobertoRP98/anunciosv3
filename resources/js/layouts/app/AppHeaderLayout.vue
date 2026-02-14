@@ -2,13 +2,17 @@
 import AppContent from '@/components/AppContent.vue';
 import AppHeader from '@/components/AppHeader.vue';
 import AppShell from '@/components/AppShell.vue';
-import { Toaster } from '@/components/ui/sonner';
+//import { Toaster } from '@/components/ui/sonner';
 import type { BreadcrumbItemType } from '@/types';
-import 'vue-sonner/style.css';
+//import 'vue-sonner/style.css';
 import { watch } from 'vue';
 import { usePage } from '@inertiajs/vue3';
-import { toast } from 'vue-sonner';
+//import { toast } from 'vue-sonner';
 import NavFooter from '@/layouts/app/NavFooter.vue';
+
+import { Toaster, toast } from 'vue-sonner'
+import 'vue-sonner/style.css'
+
 
 watch(
     () => usePage().props.flash as any,
@@ -27,14 +31,14 @@ const props = withDefaults(defineProps<Props>(), {
     breadcrumbs: () => [],
 
 
-    
+
 });
 </script>
 
 <template>
     <AppShell class="flex-col">
         <AppHeader :breadcrumbs="breadcrumbs" />
-    <Toaster/>
+        <Toaster position="top-center" />
         <AppContent>
             <slot />
         </AppContent>

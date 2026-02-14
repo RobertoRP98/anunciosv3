@@ -18,7 +18,7 @@ import {
     SelectTrigger,
 } from '@/components/ui/select';
 import SelectValue from '@/components/ui/select/SelectValue.vue';
-
+import { toast } from 'vue-sonner';
 import { Textarea } from '@/components/ui/textarea';
 import { useForm } from '@inertiajs/vue3';
 import { ref, computed } from 'vue';
@@ -42,10 +42,16 @@ const form = useForm({
 });
 
 const submitForm = () => {
+    // Si el campo contacto está vacío, reseteamos los términos por seguridad
+    if (!form.contact) {
+        form.terms_accepted = false;
+    }
+
     form.post(`/solicitante/${props.postId}/reportar`, {
         preserveScroll: true,
         onSuccess: () => {
             form.reset();
+            toast.success('Muchas gracias por tu reporte. Lo revisaremos lo antes posible.');
             emit('close');
         },
     });

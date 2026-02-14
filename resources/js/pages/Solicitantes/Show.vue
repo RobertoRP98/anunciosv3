@@ -6,11 +6,22 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import AppLayout from '@/layouts/app/AppHeaderLayout.vue';
 import Report from '../Reports/Report.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, usePage } from '@inertiajs/vue3';
 import {
     Phone, MessageCircle, Copy, Check, ChevronLeft,
     MapPin, Tag, Eye, ShieldCheck, Share2, Info
 } from 'lucide-vue-next';
+import { onMounted } from 'vue';
+import { toast } from 'vue-sonner';
+
+
+const page = usePage()
+
+onMounted(() => {
+    if (page.props.flash?.success) {
+        toast.success(page.props.flash.success)
+    }
+})
 
 const props = defineProps({
     post: Object,

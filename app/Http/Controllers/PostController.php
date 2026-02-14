@@ -61,17 +61,17 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
 
-    $authorization = Gate::inspect('create', Post::class);
+    // $authorization = Gate::inspect('create', Post::class);
 
-    if(! $authorization->allowed()) {
-        return redirect()
-        ->route('mis.anuncios')
-         ->withErrors([
-            'limit' => 'Límite de anuncios alcanzado. Puedes renovar uno existente y editarlo si deseas.'
-        ]);
-    }
+    // if(! $authorization->allowed()) {
+    //     return redirect()
+    //     ->route('mis.anuncios')
+    //      ->withErrors([
+    //         'limit' => 'Límite de anuncios alcanzado. Puedes renovar uno existente y editarlo si deseas.'
+    //     ]);
+    // }
     
-        $data = $request->validated();
+      $data = $request->validated();
 
         $plan = Plan::findOrFail($data['plan_id']);
 

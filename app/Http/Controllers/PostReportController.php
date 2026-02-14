@@ -13,7 +13,13 @@ public function store(StoreReportRequest  $request){
 
     $report = $request->validated();
 
-     if (!empty($report['terms_accepted'])) {
+     // Si NO hay contacto → reporte anónimo
+    if (empty($report['contact'])) {
+        $report['terms_accepted'] = false;
+        $report['terms_accepted_at'] = null;
+    } else {
+        // Hay contacto → debe aceptar términos
+        $report['terms_accepted'] = true;
         $report['terms_accepted_at'] = now();
     }
 

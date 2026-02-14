@@ -51,12 +51,11 @@ const breadcrumbs = [
 </script>
 
 <template>
+
     <Head title="Crear Municipio" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
-        <div
-            class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4"
-        >
+        <div class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
             <div class="flex w-full max-w-2xl flex-col">
                 <Card class="mt-3">
                     <CardHeader>
@@ -67,31 +66,19 @@ const breadcrumbs = [
                             <div class="grid w-full gap-2">
                                 <Label for="name">Nombre</Label>
                                 <Input id="name" v-model="form.name"></Input>
-                                <InputError
-                                    :message="form.errors.name"
-                                ></InputError>
+                                <InputError :message="form.errors.name"></InputError>
                             </div>
 
                             <div class="grid w-full gap-2">
                                 <Label for="state_id">Estado</Label>
-                                <Select
-                                    id="state_id"
-                                    :modelValue="form.state_id"
-                                    @update:modelValue="
-                                        (val) => (form.state_id = val)
-                                    "
-                                >
+                                <Select id="state_id" :modelValue="form.state_id" @update:modelValue="
+                                    (val) => (form.state_id = val)
+                                ">
                                     <SelectTrigger>
-                                        <SelectValue
-                                            placeholder="Selecciona un Estado"
-                                        />
+                                        <SelectValue placeholder="Selecciona un Estado" />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        <SelectItem
-                                            v-for="state in states"
-                                            :key="state.id"
-                                            :value="state.id"
-                                        >
+                                        <SelectItem v-for="state in states" :key="state.id" :value="state.id">
                                             {{ state.name }}
                                         </SelectItem>
                                     </SelectContent>
@@ -102,22 +89,12 @@ const breadcrumbs = [
                             <div class="grid w-full gap-2">
                                 <Label for="active">Activo</Label>
                                 <Switch id="active" v-model="form.active" />
-                                <InputError
-                                    :message="form.errors.active"
-                                ></InputError>
+                                <InputError :message="form.errors.active"></InputError>
                             </div>
 
                             <div class="flex items-center justify-between">
-                                <Button
-                                    variant="default"
-                                    :disabled="form.processing"
-                                    >Guardar</Button
-                                >
-                                <Link
-                                    :class="buttonVariants({ variant: 'ghost' })"
-                                    href="/municipios"
-                                    >Cancelar</Link
-                                >
+                                <Button variant="default" :disabled="form.processing">Guardar</Button>
+                                <Link :class="buttonVariants({ variant: 'ghost' })" href="/municipios">Cancelar</Link>
                             </div>
                         </form>
                     </CardContent>

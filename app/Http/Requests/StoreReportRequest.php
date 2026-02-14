@@ -22,10 +22,11 @@ class StoreReportRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'post_id' => ['required', 'exists:posts,id'],
             'reason' => ['required', 'in:Incumple politicas,Trafico,Datos falsos,Contenido ofensivo,Estafa o fraude,Otro'],
             'contact' => 'nullable|email',
             'description' => 'nullable|max:2000',
-            'terms_accepted' => ['required_with:contact', 'accepted'],
+            'terms_accepted' => ['required_with:contact', 'sometimes', 'boolean'],
         ];
     }
 }
