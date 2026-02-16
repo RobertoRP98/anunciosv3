@@ -8,6 +8,6 @@ class Payment extends Model
 {
     protected $table = 'payments';
 
-    protected $fillable = ['user_id','post_id','plan_id', 'payment_id','status','amount','payload'];
+    protected $fillable = ['user_id','post_id','plan_id', 'payment_id','status','amount','payload','terms_accepted','terms_accepted_at'];
     
 }

@@ -85,6 +85,60 @@ const breadcrumbs = [
                 {{ $page.props.errors.limit }}
             </div>
 
+            <div class="relative -mx-4 sm:mx-0 overflow-x-auto hidden sm:block">
+                <div class="min-w-[900px] sm:min-w-0">
+
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead>#</TableHead>
+                                <TableHead>Titulo</TableHead>
+                                <TableHead>Inicio</TableHead>
+                                <TableHead>Fin</TableHead>
+                                <TableHead>Vistas</TableHead>
+                                <!-- <TableHead>Activo</TableHead>-->
+                                <TableHead>Premium</TableHead>
+                                <!--  <TableHead>Status</TableHead> -->
+                                <TableHead class="w-120px">Opciones</TableHead>
+                            </TableRow>
+                        </TableHeader>
+
+                        <TableBody>
+                            <TableRow v-for="post in posts" :key="post.id">
+                                <TableCell>{{ post.id }}</TableCell>
+                                <TableCell>{{ post.title }}</TableCell>
+                                <TableCell>{{ post.start_label ?? '-' }}</TableCell>
+                                <TableCell>{{ post.end_label ?? '-' }}</TableCell>
+                                <TableCell>{{ post.views }}</TableCell>
+                                <!--  <TableCell>{{ post.active ? 'Si' : 'No' }}</TableCell> -->
+                                <TableCell>{{
+                                    post.is_premium ? 'Si' : 'No'
+                                    }}</TableCell>
+                                <!--  <TableCell>{{ post.status_label }}</TableCell> -->
+                                <TableCell class="space-x-2">
+                                    <Link :href="`/anuncios/${post.slug}`" :class="buttonVariants({ variant: 'secondary' })
+                                        ">Ver</Link>
+
+                                    <Link :href="`/anuncios/${post.slug}/edit`"
+                                        :class="buttonVariants({ variant: 'default' })">
+                                        Editar</Link>
+
+                                    <Link
+                                        v-if="!post.is_premium || post.status === 'pending' || post.status === 'expired' || (post.end && new Date(post.end) < new Date())"
+                                        :href="`/anuncios/${post.slug}/premium`"
+                                        :class="buttonVariants({ variant: 'default' })">
+                                        ⭐ Hacer Premium
+                                    </Link>
+                                </TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hidden md:block lg:hidden">
             <Table>
                 <TableHeader>
                     <TableRow>
@@ -93,42 +147,61 @@ const breadcrumbs = [
                         <TableHead>Inicio</TableHead>
                         <TableHead>Fin</TableHead>
                         <TableHead>Vistas</TableHead>
-                        <!-- <TableHead>Activo</TableHead>-->
                         <TableHead>Premium</TableHead>
-                        <!--  <TableHead>Status</TableHead> -->
-                        <TableHead class="w-120px">Opciones</TableHead>
+                        <TableHead class="w-120px text-right">Opciones</TableHead>
                     </TableRow>
                 </TableHeader>
-
                 <TableBody>
                     <TableRow v-for="post in posts" :key="post.id">
-                        <TableCell>{{ post.id }}</TableCell>
-                        <TableCell>{{ post.title }}</TableCell>
-                        <TableCell>{{ post.start_label ?? '-' }}</TableCell>
-                        <TableCell>{{ post.end_label ?? '-' }}</TableCell>
-                        <TableCell>{{ post.views }}</TableCell>
-                        <!--  <TableCell>{{ post.active ? 'Si' : 'No' }}</TableCell> -->
-                        <TableCell>{{
-                            post.is_premium ? 'Si' : 'No'
-                        }}</TableCell>
-                        <!--  <TableCell>{{ post.status_label }}</TableCell> -->
-                        <TableCell class="space-x-2">
-                            <Link :href="`/anuncios/${post.slug}`" :class="buttonVariants({ variant: 'secondary' })
-                                ">Ver</Link>
-
-                            <Link :href="`/anuncios/${post.slug}/edit`" :class="buttonVariants({ variant: 'default' })">
-                                Editar</Link>
-
-                            <Link
-                                v-if="!post.is_premium || post.status === 'pending' || post.status === 'expired' || (post.end && new Date(post.end) < new Date())"
-                                :href="`/anuncios/${post.slug}/premium`"
-                                :class="buttonVariants({ variant: 'default' })">
-                                ⭐ Hacer Premium
-                            </Link>
-                        </TableCell>
                     </TableRow>
                 </TableBody>
             </Table>
         </div>
+
+        <div class="grid grid-cols-1 gap-4 md:hidden">
+            <div v-for="post in posts" :key="post.id"
+                class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-mono text-slate-400">#{{ post.id }}</span>
+                    <Badge :variant="post.is_premium ? 'default' : 'secondary'">
+                        {{ post.is_premium ? '⭐ Premium' : 'Estándar' }}
+                    </Badge>
+                </div>
+
+                <h3 class="font-bold text-lg mb-2 line-clamp-1">{{ post.title }}</h3>
+
+                <div class="grid grid-cols-2 gap-2 text-sm mb-4">
+                    <div>
+                        <p class="text-slate-500">Inicio</p>
+                        <p>{{ post.start_label ?? '-' }}</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500">Fin</p>
+                        <p>{{ post.end_label ?? '-' }}</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-500">Vistas</p>
+                        <p class="font-medium">{{ post.views }}</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100 dark:border-zinc-800">
+                    <Link :href="`/anuncios/${post.slug}`" :class="buttonVariants({ variant: 'secondary', size: 'sm' })"
+                        class="flex-1">Ver</Link>
+                    <Link :href="`/anuncios/${post.slug}/edit`"
+                        :class="buttonVariants({ variant: 'default', size: 'sm' })" class="flex-1">Editar</Link>
+
+                    <Link
+                        v-if="!post.is_premium || post.status === 'pending' || post.status === 'expired' || (post.end && new Date(post.end) < new Date())"
+                        :href="`/anuncios/${post.slug}/premium`"
+                        :class="buttonVariants({ variant: 'default', size: 'sm' })"
+                        class="w-full mt-1 bg-yellow-500 hover:bg-yellow-600 text-black">
+                        ⭐ Hacer Premium
+                    </Link>
+                </div>
+            </div>
+        </div>
+
     </AppLayout>
 </template>

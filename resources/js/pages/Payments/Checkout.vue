@@ -100,18 +100,56 @@ onMounted(() => {
 </script>
 
 <template>
+
     <Head title="Pagar Anuncio" />
 
     <AppLayout>
-        <div class="mx-auto max-w-3xl py-10">
-            <h1 class="text-2xl font-bold">Pago del anuncio</h1>
+        <div class="mx-auto max-w-[500px] py-12 px-4">
+            <div
+                class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
+                <div class="border-b border-slate-100 bg-slate-50/50 p-6 dark:border-zinc-800 dark:bg-zinc-900/50">
+                    <h1 class="text-xl font-semibold tracking-tight">Resumen de la orden</h1>
+                    <p class="text-sm text-slate-500 dark:text-zinc-400">Estás a un paso de destacar tu anuncio</p>
+                </div>
 
-            <p class="mt-2">
-                Plan seleccionado: <strong>{{ plan.name }}</strong>
-            </p>
-            <p>Precio: ${{ plan.price }}</p>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="space-y-1">
+                            <p class="text-sm font-medium leading-none text-slate-500 dark:text-zinc-400">Plan
+                                seleccionado</p>
+                            <p class="text-lg font-bold">{{ plan.name }}</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-medium leading-none text-slate-500 dark:text-zinc-400">Total a pagar
+                            </p>
+                            <p class="text-2xl font-black text-blue-600 dark:text-blue-400">${{ plan.price }}</p>
+                        </div>
+                    </div>
 
-            <div id="paymentBrick_container" class="mt-6"></div>
+                    <div class="h-px w-full bg-slate-100 dark:bg-zinc-800 mb-6"></div>
+
+                    <div id="paymentBrick_container"></div>
+
+                    <div class="mt-6 rounded-lg bg-slate-50 p-4 dark:bg-zinc-900">
+                        <p class="text-[11px] leading-relaxed text-slate-500 dark:text-zinc-400">
+                            Al completar el pago, confirmas que has leído y aceptas nuestras
+                            <a href="/politica-de-pago" target="_blank"
+                                class="font-semibold text-blue-600 hover:underline dark:text-blue-400">Politicas de
+                                pago</a>.
+                            Tu pago será procesado de forma segura a través de Mercado Pago.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <a href="/mis-anuncios">
+                    <button @click="window.history.back()"
+                        class="text-sm text-slate-400 hover:text-slate-600 transition-colors">
+                        ← Cancelar y volver
+                    </button>
+                </a>
+            </div>
         </div>
     </AppLayout>
 </template>

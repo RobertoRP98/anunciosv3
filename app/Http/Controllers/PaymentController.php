@@ -77,6 +77,8 @@ class PaymentController extends Controller
                 'status' => $payment->status,
                 'amount' => $request->transaction_amount,
                 'payload' => json_encode($payment),
+                'terms_accepted' => true,
+                'terms_accepted_at' => now(),
             ]);
 
             if ($payment->status === 'approved') {

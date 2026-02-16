@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('status')->default('pending');
             $table->decimal('amount',10,2);
             $table->json('payload')->nullable();
+            $table->timestamp('terms_accepted_at')->nullable();
+            $table->boolean('terms_accepted')->default(false);
             $table->timestamps();
         });
     }
