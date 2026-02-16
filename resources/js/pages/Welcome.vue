@@ -46,7 +46,7 @@ withDefaults(
 
             <nav class="hidden items-center gap-6 text-sm font-medium md:flex">
                 <Link href="/" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400">Inicio</Link>
-                <Link href="/nosotros" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400">
+                <Link href="#misionvision" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400">
                     Nosotros</Link>
                 <Link href="/solicitantes" class="text-slate-600 transition hover:text-rose-500 dark:text-slate-400">Ver
                     Solicitudes</Link>
@@ -138,7 +138,7 @@ withDefaults(
 
         -->
 
-        <section class="py-2 px-6 overflow-hidden relative">
+        <section id="misionvision" class="py-2 px-1 overflow-hidden relative">
             <div
                 class="absolute right-0 top-1/2 -z-10 h-64 w-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-50/50 blur-3xl dark:bg-blue-900/10">
             </div>

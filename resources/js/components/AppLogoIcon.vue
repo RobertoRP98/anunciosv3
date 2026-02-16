@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue';
-import { HeartPulse } from 'lucide-vue-next';
+import { Heart } from 'lucide-vue-next';
 
 defineOptions({
     inheritAttrs: false,
@@ -14,5 +14,7 @@ defineProps<Props>();
 </script>
 
 <template>
-   <HeartPulse />
+    <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-500 text-white">
+        <Heart class="h-5 w-5 fill-current" />
+    </div>
 </template>
